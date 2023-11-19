@@ -1,6 +1,7 @@
 package Factory;
 
 public interface IHouse {
-    public void description();
-    public String getName();
+    void description();
+    String getName();
+    void setBuilt(String built);
 }

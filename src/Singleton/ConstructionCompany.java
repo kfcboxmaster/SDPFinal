@@ -20,7 +20,7 @@ public class ConstructionCompany {
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
-    public static void removeObserver(Observer observer) {
+    public void removeObserver(Observer observer) {
         observers.remove(observer);
     }
     public void notifyObservers(String message) {
@@ -41,4 +41,11 @@ public class ConstructionCompany {
     public void addHouse(IHouse house){
         houses.add(house);
     }
+    public void removeHouse(IHouse house){
+        houses.remove(house);
+    }
+    public void removeHouse(int index){
+        houses.remove(index);
+    }
+
 }
