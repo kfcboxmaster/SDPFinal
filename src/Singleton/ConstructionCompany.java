@@ -38,8 +38,14 @@ public class ConstructionCompany {
             System.out.println(( i + 1 ) + ". " + houses.get(i).getName());
         }
     }
+    public void showHouseDescription(int index){
+        houses.get(index).description();
+    }
     public void addHouse(IHouse house){
         houses.add(house);
+    }
+    public boolean isEmpty() {
+        return houses.isEmpty();
     }
     public void removeHouse(IHouse house){
         houses.remove(house);

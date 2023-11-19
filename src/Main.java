@@ -16,6 +16,7 @@ public class Main {
         double cost;
         String built;
         ContextStrategy strategy;
+        int showDescIndex;
         ConstructionCompany constructionCompany = ConstructionCompany.getInstance();
         while(true){
             System.out.println("""
@@ -23,9 +24,10 @@ public class Main {
                         1. Make a plan for apartment.
                         2. Make a plan for cottage.
                         3. House Plans.
-                        4. Add a client.
-                        5. Remove a client
-                        6. Client.
+                        4. Show plan description.
+                        5. Add a client.
+                        6. Remove a client
+                        7. Client.
                         9. Exit.""");
             userAnswer = scanner.nextInt();
             switch(userAnswer){
@@ -107,17 +109,25 @@ public class Main {
                     constructionCompany.showHousePlans();
                     break;
                 case 4:
+                    if (!constructionCompany.isEmpty()) {
+                        System.out.println("Which house you want to see?");
+                        constructionCompany.showHousePlans();
+                        showDescIndex = scanner.nextInt();
+                        constructionCompany.showHouseDescription(showDescIndex-1);
+                    }
+                    break;
+                case 5:
                     System.out.println("What's clients name to be added?");
                     String answer = scanner.next();
                     Observer addClient = new Client(answer);
                     constructionCompany.addObserver(addClient);
                     break;
-                case 5:
+                case 6:
                     System.out.println("What's clients name to be removed?");
                     Observer removeClient = new Client(scanner.next());
                     constructionCompany.removeObserver(removeClient);
                     break;
-                case 6:
+                case 7:
                     constructionCompany.showObservers();
                     break;
 
