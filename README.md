@@ -2,6 +2,27 @@
 
 ![img.png](img.png)
 UML Diagram of the Design Patterns used in this project
+
+## Installation
+- Required JDK 21.0.1
+- Open terminal
+- `git clone https://github.com/kfcboxmaster/SDPFinal/`
+- `cd SDPFinal`
+- `Open in IntelliJ IDEA`
+- `Run Main.java`
+
+## TODO:
+- [x] Create UML Diagram
+- [x] Create README.md
+- [x] Create Singleton Pattern
+- [x] Create Factory Pattern
+- [x] Create Decorator Pattern
+- [x] Create Strategy Pattern
+- [x] Create Observer Pattern
+- [x] Create Adapter Pattern
+- [x] Create Faced Problems Document
+
+
 ## Adapter Pattern
 
 
@@ -153,10 +174,26 @@ public class ConstructionCompany {
 
 In this code, the `ConstructionCompany` class has a private static variable `instance` that holds the single instance of the class. The `getInstance()` method returns this instance, creating it if it doesn't exist. This ensures that there is only one `ConstructionCompany` instance in the application.
 
-## Installation
-- Required JDK 21.0.1
-- Open terminal
-- `git clone https://github.com/kfcboxmaster/SDPFinal/`
-- `cd SDPFinal`
-- `Open in IntelliJ IDEA`
-- `Run Main.java`
+## Challenges Faced
+We work with colaboratory session, when we work in the same time on the same project and files.
+So that we interrupt each other and we have to wait for each other to finish the work.
+Also, we have to work on the same files and we have to be careful not to delete each other's work.
+We decided to work with git and it was the best decision we made.
+Look at the old UML diagram and the new one, you can see the difference.
+![img_1.png](img_1.png)
+
+## Conclusion
+In conclusion, this project demonstrates the application of various design patterns in a Java-based construction company application. 
+The Singleton pattern ensures that there is only one instance of the `ConstructionCompany` class. The Factory pattern is used to create different types of `IHouse` objects. The Decorator pattern adds additional features to `IHouse` objects. The Strategy pattern allows the selection of materials used to build a house. The Observer pattern notifies `Client` objects about updates in the `ConstructionCompany`. Lastly, the Adapter pattern adapts the interface of a third-party `CostEstimationService` to the `CostEstimator` interface used in the application. Each of these patterns contributes to making the code more flexible, maintainable, and understandable.
+
+##### **_It was hard to implement and took more effort than expected. However, it was a great learning experience for us._**
+
+## References
+- https://www.w3schools.com/java/
+- https://refactoring.guru/design-patterns
+- https://www.tutorialspoint.com/design_pattern/index.htm
+- https://www.geeksforgeeks.org/design-patterns-set-1-introduction/
+- https://www.geeksforgeeks.org/design-patterns-set-2-factory-method/
+- https://www.geeksforgeeks.org/design-patterns-set-3-factory-method/
+- https://www.geeksforgeeks.org/design-patterns-set-4-observer-pattern/
+- https://www.geeksforgeeks.org/design-patterns-set-6-adapter-pattern/
