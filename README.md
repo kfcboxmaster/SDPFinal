@@ -224,13 +224,26 @@ public class ConstructionCompany {
 In this code, the `ConstructionCompany` class has a private static variable `instance` that holds the single instance of the class. The `getInstance()` method returns this instance, creating it if it doesn't exist. This ensures that there is only one `ConstructionCompany` instance in the application.
 
 ## Challenges Faced
+Throughout the course of our work, we encountered significant challenges stemming from a lack of collaboration within the group. 
+The absence of cohesive teamwork led to instances where our ideas conflicted with one another, creating disruptions in our collective workflow.
+The struggle to synchronize our approaches and grasp each other's work processes became apparent, resulting in a need for multiple rewrites of the project. 
 We work with colaboratory session, when we work in the same time on the same project and files.
 So that we interrupt each other and we have to wait for each other to finish the work.
 Also, we have to work on the same files and we have to be careful not to delete each other's work.
 We decided to work with git and it was the best decision we made.
+
+Here's the major issues we've face during the project implementation:
+- Poor UML Diagram
+The absence of well-crafted UML diagrams posed a significant hurdle in our project.
+Insufficient clarity in our diagrams left critical questions unanswered,
+hindering our progress to the point where code writing became a daunting task.
+This experience underscored the vital importance of having a robust plan before delving into projects of this nature.
 Look at the old UML diagram and the new one, you can see the difference.
 
 ![img_1.png](images/img_1.png)
+
+- We encountered another challenge in our workflow - the limited understanding of Software Design Patterns' structure and implementation. This deficiency hindered our ability to seamlessly incorporate all six design patterns into a single project. The complexity of this task became apparent due to a lack of in-depth knowledge regarding the intricacies of Software Design Patterns.
+Looking back, this experience emphasizes the crucial lesson that dedicating time and effort to thoroughly understand the core concepts is essential before taking on complex projects. In simpler terms, it underscores the importance of building a strong foundation of knowledge before diving into challenging tasks.
 
 Also we had some problems with our past projects.
 We choosed a complex project topic to implement learned design patterns.
@@ -238,6 +251,7 @@ We choosed a complex project topic to implement learned design patterns.
 ##### **So that we had to change our project topic and we decided to implement design patterns in a construction company application.**
 
 ## Conclusion
+In looking back at our project, the challenges we faced in working together reminded us of the human side of teamwork. It stressed the importance of having shared ideas and coordinated workflows. The significance of well-prepared UML diagrams became clear—they were crucial in offering clarity and guidance, making sure we had answers to important questions before we even started coding. Moreover, our difficulty in implementing Software Design Patterns highlighted the necessity of having a deep understanding of these concepts before taking on complex projects. This experience reinforced the idea that thorough preparation and a solid grasp of foundational concepts are key elements in navigating the complexities of software development successfully.
 In conclusion, this project demonstrates the application of various design patterns in a Java-based construction company application. 
 The Singleton pattern ensures that there is only one instance of the `ConstructionCompany` class. The Factory pattern is used to create different types of `IHouse` objects. The Decorator pattern adds additional features to `IHouse` objects. The Strategy pattern allows the selection of materials used to build a house. The Observer pattern notifies `Client` objects about updates in the `ConstructionCompany`. Lastly, the Adapter pattern adapts the interface of a third-party `CostEstimationService` to the `CostEstimator` interface used in the application. Each of these patterns contributes to making the code more flexible, maintainable, and understandable.
 
