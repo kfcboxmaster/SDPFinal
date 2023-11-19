@@ -8,6 +8,7 @@
 - This project demonstrates the application of various design patterns in a Java-based construction company application.
 - Idea of project is to create a construction company application that manages houses and observers (clients).
 - Purpose of project is to implement learned design patterns in a real-world application.
+- Objective is making friendly UI and easy to understand code.
 
 ![img.png](images/img.png)
 UML Diagram of the Design Patterns used in this project
@@ -258,11 +259,16 @@ The Singleton pattern ensures that there is only one instance of the `Constructi
 ##### **_It was hard to implement and took more effort than expected. However, it was a great learning experience for us._**
 
 # Future improvements
+- Connect database to store clients and houses
+- Implement google maps to make address easier to access
+- Enhance teamwork
 - Add more design patterns
 - Add more features to the application
 - Improve the UI
 - Add tests
 - Add more comments
+
+Our team also needs to train our ability to work on the project at the same time. Problems we faced were usually because of our poor comunication and unexperience. We could this task thrice as fast and spend less effort to create if we head a good teamleading.
 
 ## References
 - https://www.w3schools.com/java/
