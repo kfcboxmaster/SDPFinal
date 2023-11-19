@@ -1,6 +1,6 @@
 # Software Design Patterns Final Project | Construction Company
 
-![img.png](img.png)
+![img.png](images/img.png)
 UML Diagram of the Design Patterns used in this project
 
 ## Installation
@@ -181,7 +181,7 @@ Also, we have to work on the same files and we have to be careful not to delete 
 We decided to work with git and it was the best decision we made.
 Look at the old UML diagram and the new one, you can see the difference.
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 Also we had some problems with our past projects.
 We choosed a complex project topic to implement learned design patterns.
