@@ -11,10 +11,10 @@ public class WarrantyDecorator extends HouseDecorator{
     @Override
     public void description() {
         decoratedHouse.description();
-        System.out.println("Long-term warranty(50 years)");
+        System.out.println("Long-term warranty(50 years)"); //enhancing description
     }
     @Override
     public double getCost(){
-        return decoratedHouse.getCost() + 2000;
+        return decoratedHouse.getCost() + 2000; //getting this wrapper makes cost more
     }
 }

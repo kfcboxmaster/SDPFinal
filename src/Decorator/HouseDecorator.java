@@ -3,6 +3,7 @@ package Decorator;
 import Factory.IHouse;
 
 public class HouseDecorator implements IHouse{
+    //Wrapper of decorator
     protected IHouse decoratedHouse;
 
     public HouseDecorator(IHouse decoratedHouse) {

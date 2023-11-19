@@ -1,5 +1,7 @@
 package Factory;
-
+/*
+Concrete Product in Factory pattern
+ */
 public class CottageHouse implements IHouse{
     private String address;
     private double cost;
@@ -12,6 +14,9 @@ public class CottageHouse implements IHouse{
     public String getName(){
         return address;
     }
+    /*
+    This method will be modified through Decorator pattern
+     */
     @Override
     public void description(){
         System.out.println("House with its own land garden. Nestled within one-story building. ");

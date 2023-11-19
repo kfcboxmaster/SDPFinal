@@ -2,6 +2,9 @@ package Factory;
 
 import Strategy.BuiltStrategy;
 
+/*
+Concrete product in Factory pattern
+ */
 public class ApartmentHouse implements IHouse{
     private String address;
     private double cost;
@@ -14,6 +17,9 @@ public class ApartmentHouse implements IHouse{
     public String getName(){
         return address;
     }
+    /*
+    This method is needed to demonstrate Decorator pattern
+     */
     @Override
     public void description(){
         System.out.println("House nestled within urban or suburban landscape, multi-story buildings. ");

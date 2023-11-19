@@ -10,10 +10,10 @@ public class FurnitureDecorator extends HouseDecorator {
     @Override
     public void description() {
         decoratedHouse.description();
-        System.out.println("Built-in furniture");
+        System.out.println("Built-in furniture"); //enhancing description
     }
     @Override
     public double getCost(){
         return decoratedHouse.getCost() + 500;
-    }
+    } //getting this wrapper makes cost more
 }
