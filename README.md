@@ -180,7 +180,13 @@ So that we interrupt each other and we have to wait for each other to finish the
 Also, we have to work on the same files and we have to be careful not to delete each other's work.
 We decided to work with git and it was the best decision we made.
 Look at the old UML diagram and the new one, you can see the difference.
+
 ![img_1.png](img_1.png)
+
+Also we had some problems with our past projects.
+We choosed a complex project topic to implement learned design patterns.
+
+##### **So that we had to change our project topic and we decided to implement design patterns in a construction company application.**
 
 ## Conclusion
 In conclusion, this project demonstrates the application of various design patterns in a Java-based construction company application. 
