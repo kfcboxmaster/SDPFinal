@@ -1,12 +1,11 @@
+import Adapter.*;
 import Decorator.*;
 import Factory.*;
 import Singleton.*;
 import Observer.*;
 import Strategy.*;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
-//import Adapter.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,12 +16,16 @@ public class Main {
         String built;
         ContextStrategy strategy;
         int showDescIndex;
+        CostEstimationService costEstimationService = new CostEstimationService();
+        CostEstimator costEstimator = new CostEstimationAdapter(costEstimationService);
+        CostEstimationOtherService costEstimationOtherService = new CostEstimationOtherService();
+        CostEstimator costEstimatorOther = new CostEstimationOtherAdapter(costEstimationOtherService);
+
         ConstructionCompany constructionCompany = ConstructionCompany.getInstance();
         while(true){
             System.out.println("""
                         User Menu:
                         1. Make a plan for apartment.
-                        2. Make a plan for cottage.
                         3. House Plans.
                         4. Show plan description.
                         5. Add a client.
@@ -38,18 +41,26 @@ public class Main {
                     cost = scanner.nextInt();
                     System.out.println("Which material you want your house to be made of: Wood, Brick. ");
                     built = scanner.next();
-                    ApartmentFactory apartmentFactory = new ApartmentFactory();
+                    IHouseFactory factory;
+                    String houseType;
+                    System.out.println("Enter a house type: Apartment, Cottage");
+                    houseType = scanner.next();
+                    if(houseType.equals("Apartment")){
+                        factory = new ApartmentFactory();
+                    } else {
+                        factory = new CottageFactory();
+                    }
                     strategy = new ContextStrategy();
                     if(built.equals("Wood")){
                         strategy.setStrategy(new WoodenHouseStrategy());
                     } else {
                         strategy.setStrategy(new BrickHouseStrategy());
                     }
-                    IHouse apartmentHouse = apartmentFactory.buildHouse(address, cost);
-                    apartmentHouse.setBuilt(strategy.showMaterials());
+                    IHouse house = factory.buildHouse(address, cost);
+                    house.setBuilt(strategy.showMaterials());
                     System.out.println("Do you want additional features like warranty of built-in furniture?(Y/N)");
                     if(scanner.next().equals("Y")){
-                        IHouse decorator = new HouseDecorator(apartmentHouse);
+                        IHouse decorator = new HouseDecorator(house);
                         System.out.println("Do you want a warranty? It will add a cost of 2000(Y/N)");
                         if (scanner.next().equals("Y")){
                             decorator = new WarrantyDecorator(decorator);
@@ -59,50 +70,19 @@ public class Main {
                             decorator = new FurnitureDecorator(decorator);
                         }
                         constructionCompany.addHouse(decorator);
-                        System.out.println("House was added to house plans. And costs " + decorator.getCost() + "$");
+                        System.out.println("House was added to house plans.");
+                        System.out.println(strategy.showMaterials());
+                        System.out.println(costEstimator.estimateCost(decorator));
+                        System.out.println(costEstimatorOther.estimateCost(decorator));
                         decorator.description();
                     }
                     else {
-                        constructionCompany.addHouse(apartmentHouse);
-                        System.out.println(apartmentHouse.toString() + " was added to house plans. ");
-                        apartmentHouse.description();
-                    }
-                    break;
-                case 2:
-                    System.out.println("In what address you want to build a house?");
-                    address = scanner.next();
-                    System.out.println("How much funds you ready to invest?");
-                    cost = scanner.nextInt();
-                    System.out.println("Which material you want your house to be made of: Wood, Brick.");
-                    built = scanner.next();
-                    CottageFactory cottageFactory = new CottageFactory();
-                    strategy = new ContextStrategy();
-                    if(built.equals("Wood")){
-                        strategy.setStrategy(new WoodenHouseStrategy());
-                    } else {
-                        strategy.setStrategy(new BrickHouseStrategy());
-                    }
-                    IHouse cottageHouse = cottageFactory.buildHouse(address, cost);
-                    cottageHouse.setBuilt(strategy.showMaterials());
-                    System.out.println("Do you want additional features like warranty of built-in furniture?(Y/N)");
-                    if(scanner.next().equals("Y")){
-                        IHouse decorator = new HouseDecorator(cottageHouse);
-                        System.out.println("Do you want a warranty? It will add a cost of 2000(Y/N)");
-                        if (scanner.next().equals("Y")){
-                            decorator = new WarrantyDecorator(decorator);
-                        }
-                        System.out.println("Do you want a furniture? It will add a cost of 500(Y/N)");
-                        if (scanner.next().equals("Y")){
-                            decorator = new FurnitureDecorator(decorator);
-                        }
-                        constructionCompany.addHouse(decorator);
-                        System.out.println(decorator.toString() + " was added to house plans. ");
-                        decorator.description();
-                    }
-                    else {
-                        constructionCompany.addHouse(cottageHouse);
-                        System.out.println(cottageHouse.toString() + " was added to house plans. ");
-                        cottageHouse.description();
+                        constructionCompany.addHouse(house);
+                        System.out.println(house.toString() + " was added to house plans. ");
+                        System.out.println(strategy.showMaterials());
+                        System.out.println(costEstimator.estimateCost(house));
+                        System.out.println(costEstimatorOther.estimateCost(house));
+                        house.description();
                     }
                     break;
                 case 3:

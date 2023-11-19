@@ -28,4 +28,9 @@ public class CottageHouse implements IHouse{
     public double getCost(){
         return cost;
     }
+
+    @Override
+    public String getBuilt() {
+        return built;
+    }
 }

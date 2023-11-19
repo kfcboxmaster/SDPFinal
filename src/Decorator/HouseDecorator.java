@@ -26,6 +26,11 @@ public class HouseDecorator implements IHouse{
     }
 
     @Override
+    public String getBuilt() {
+        return decoratedHouse.getBuilt();
+    }
+
+    @Override
     public String toString() {
         return decoratedHouse.toString();
     }

@@ -5,4 +5,5 @@ public interface IHouse {
     String getName();
     void setBuilt(String built);
     double getCost();
+    String getBuilt();
 }

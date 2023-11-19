@@ -3,6 +3,7 @@ package Decorator;
 import Factory.IHouse;
 
 public class WarrantyDecorator extends HouseDecorator{
+
     public WarrantyDecorator(IHouse decoratedHouse) {
         super(decoratedHouse);
     }

@@ -42,6 +42,7 @@ public class ConstructionCompany {
         houses.get(index).description();
     }
     public void addHouse(IHouse house){
+        this.notifyObservers("New house plan was added to house plans.");
         houses.add(house);
     }
     public boolean isEmpty() {
