@@ -80,5 +80,4 @@ public class ConstructionCompany {
     public void removeHouse(int index){ // Removes house with the index
         houses.remove(index);
     }
-
 }
