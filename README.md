@@ -35,6 +35,12 @@ UML Diagram of the Design Patterns used in this project
 
 ## Adapter Pattern
 
+![img.png](images/adapter_pattern.png)
+
+### Structure
+- **CostEstimator - Client Interface**
+- **CostEstimationService, CostEstimationOtherService - Service**
+- **CostEstimationAdapter, CostEstimationOtherAdapter - Adapter**
 
 The Adapter pattern is a structural design pattern that allows objects with incompatible interfaces to collaborate. It's often used when you want to make your existing classes work with others without modifying their source code.
 
