@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String userAnswer;
+        int userAnswer;
         String address;
         double cost;
         String built;
@@ -27,15 +27,15 @@ public class Main {
                         5. Remove a client
                         6. Client.
                         9. Exit.""");
-            userAnswer = scanner.nextLine();
+            userAnswer = scanner.nextInt();
             switch(userAnswer){
-                case "1":
+                case 1:
                     System.out.println("In what address you want to build a house?");
                     address = scanner.next();
                     System.out.println("How much funds you ready to invest?");
                     cost = scanner.nextInt();
                     System.out.println("Which material you want your house to be made of: Wood, Brick. ");
-                    built = scanner.nextLine();
+                    built = scanner.next();
                     ApartmentFactory apartmentFactory = new ApartmentFactory();
                     strategy = new ContextStrategy();
                     if(built.equals("Wood")){
@@ -66,13 +66,13 @@ public class Main {
                         apartmentHouse.description();
                     }
                     break;
-                case "2":
+                case 2:
                     System.out.println("In what address you want to build a house?");
                     address = scanner.next();
                     System.out.println("How much funds you ready to invest?");
                     cost = scanner.nextInt();
                     System.out.println("Which material you want your house to be made of: Wood, Brick.");
-                    built = scanner.nextLine();
+                    built = scanner.next();
                     CottageFactory cottageFactory = new CottageFactory();
                     strategy = new ContextStrategy();
                     if(built.equals("Wood")){
@@ -103,28 +103,25 @@ public class Main {
                         cottageHouse.description();
                     }
                     break;
-                case "3":
+                case 3:
                     constructionCompany.showHousePlans();
                     break;
-                case "4":
-                    System.out.println("What plan you want to change?");
-
-                case "5":
+                case 4:
                     System.out.println("What's clients name to be added?");
-                    String answer = scanner.nextLine();
+                    String answer = scanner.next();
                     Observer addClient = new Client(answer);
                     constructionCompany.addObserver(addClient);
                     break;
-                case "6":
+                case 5:
                     System.out.println("What's clients name to be removed?");
-                    Observer removeClient = new Client(scanner.nextLine());
+                    Observer removeClient = new Client(scanner.next());
                     constructionCompany.removeObserver(removeClient);
                     break;
-                case "7":
+                case 6:
                     constructionCompany.showObservers();
                     break;
 
-                case "9":
+                case 9:
                     return;
             }
         }

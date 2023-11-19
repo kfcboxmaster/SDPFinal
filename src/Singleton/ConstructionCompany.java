@@ -21,7 +21,7 @@ public class ConstructionCompany {
         observers.add(observer);
     }
     public void removeObserver(Observer observer) {
-        observers.remove(observer);
+        observers.removeIf(o -> o.getName().equals(observer.getName()));
     }
     public void notifyObservers(String message) {
         for (Observer observer : observers) {
