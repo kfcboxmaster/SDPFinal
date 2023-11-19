@@ -1,5 +1,14 @@
 # Software Design Patterns Final Project | Construction Company
 
+#### Group: SE-2216
+
+#### Team members: Kuanysh Kambarov, Rakhat Bakhytgali, Maxim Turbulyak
+
+### Project Overview
+- This project demonstrates the application of various design patterns in a Java-based construction company application.
+- Idea of project is to create a construction company application that manages houses and observers (clients).
+- Purpose of project is to implement learned design patterns in a real-world application.
+
 ![img.png](images/img.png)
 UML Diagram of the Design Patterns used in this project
 
@@ -193,6 +202,13 @@ In conclusion, this project demonstrates the application of various design patte
 The Singleton pattern ensures that there is only one instance of the `ConstructionCompany` class. The Factory pattern is used to create different types of `IHouse` objects. The Decorator pattern adds additional features to `IHouse` objects. The Strategy pattern allows the selection of materials used to build a house. The Observer pattern notifies `Client` objects about updates in the `ConstructionCompany`. Lastly, the Adapter pattern adapts the interface of a third-party `CostEstimationService` to the `CostEstimator` interface used in the application. Each of these patterns contributes to making the code more flexible, maintainable, and understandable.
 
 ##### **_It was hard to implement and took more effort than expected. However, it was a great learning experience for us._**
+
+# Future improvements
+- Add more design patterns
+- Add more features to the application
+- Improve the UI
+- Add tests
+- Add more comments
 
 ## References
 - https://www.w3schools.com/java/
