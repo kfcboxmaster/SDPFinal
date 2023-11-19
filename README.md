@@ -1,6 +1,9 @@
-# Design Patterns in this Project
+# Software Design Patterns Final Project | Construction Company
 
+![img.png](img.png)
+UML Diagram of the Design Patterns used in this project
 ## Adapter Pattern
+
 
 The Adapter pattern is a structural design pattern that allows objects with incompatible interfaces to collaborate. It's often used when you want to make your existing classes work with others without modifying their source code.
 
