@@ -1,12 +1,36 @@
 package Decorator;
 
-import Strategy.BuiltStrategy;
+import Factory.IHouse;
 
-public abstract class HouseDecorator implements BuiltStrategy {
-    protected BuiltStrategy strategy;
-    HouseDecorator(BuiltStrategy strategy){
-        this.strategy = strategy;
+public class HouseDecorator implements IHouse{
+    protected IHouse decoratedHouse;
+
+    public HouseDecorator(IHouse decoratedHouse) {
+        this.decoratedHouse = decoratedHouse;
+    }
+
+    @Override
+    public String getName() {
+        return decoratedHouse.getName();
+    }
+
+    @Override
+    public void description() {
+        decoratedHouse.description();
+        System.out.println("This house also has additional features like: ");
+    }
+
+    @Override
+    public void setBuilt(String built) {
+        decoratedHouse.setBuilt(built);
+    }
+
+    @Override
+    public String toString() {
+        return decoratedHouse.toString();
     }
     @Override
-    public abstract String showMaterials();
+    public double getCost(){
+        return decoratedHouse.getCost();
+    }
 }

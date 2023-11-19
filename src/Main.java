@@ -25,8 +25,7 @@ public class Main {
                         3. House Plans.
                         4. Add a client.
                         5. Remove a client
-                        6. Clients.
-                       
+                        6. Client.
                         9. Exit.""");
             userAnswer = scanner.nextLine();
             switch(userAnswer){
@@ -46,8 +45,26 @@ public class Main {
                     }
                     IHouse apartmentHouse = apartmentFactory.buildHouse(address, cost);
                     apartmentHouse.setBuilt(strategy.showMaterials());
-                    constructionCompany.addHouse(apartmentHouse);
-                    System.out.println(apartmentHouse.toString() + " was added to house plans. ");
+                    System.out.println("Do you want additional features like warranty of built-in furniture?(Y/N)");
+                    if(scanner.next().equals("Y")){
+                        IHouse decorator = new HouseDecorator(apartmentHouse);
+                        System.out.println("Do you want a warranty? It will add a cost of 2000(Y/N)");
+                        if (scanner.next().equals("Y")){
+                            decorator = new WarrantyDecorator(decorator);
+                        }
+                        System.out.println("Do you want a furniture? It will add a cost of 500(Y/N)");
+                        if (scanner.next().equals("Y")){
+                            decorator = new FurnitureDecorator(decorator);
+                        }
+                        constructionCompany.addHouse(decorator);
+                        System.out.println("House was added to house plans. And costs " + decorator.getCost() + "$");
+                        decorator.description();
+                    }
+                    else {
+                        constructionCompany.addHouse(apartmentHouse);
+                        System.out.println(apartmentHouse.toString() + " was added to house plans. ");
+                        apartmentHouse.description();
+                    }
                     break;
                 case "2":
                     System.out.println("In what address you want to build a house?");
@@ -65,26 +82,48 @@ public class Main {
                     }
                     IHouse cottageHouse = cottageFactory.buildHouse(address, cost);
                     cottageHouse.setBuilt(strategy.showMaterials());
-                    constructionCompany.addHouse(cottageHouse);
-                    System.out.println(cottageHouse.toString() + " was added to house plans. ");
+                    System.out.println("Do you want additional features like warranty of built-in furniture?(Y/N)");
+                    if(scanner.next().equals("Y")){
+                        IHouse decorator = new HouseDecorator(cottageHouse);
+                        System.out.println("Do you want a warranty? It will add a cost of 2000(Y/N)");
+                        if (scanner.next().equals("Y")){
+                            decorator = new WarrantyDecorator(decorator);
+                        }
+                        System.out.println("Do you want a furniture? It will add a cost of 500(Y/N)");
+                        if (scanner.next().equals("Y")){
+                            decorator = new FurnitureDecorator(decorator);
+                        }
+                        constructionCompany.addHouse(decorator);
+                        System.out.println(decorator.toString() + " was added to house plans. ");
+                        decorator.description();
+                    }
+                    else {
+                        constructionCompany.addHouse(cottageHouse);
+                        System.out.println(cottageHouse.toString() + " was added to house plans. ");
+                        cottageHouse.description();
+                    }
                     break;
                 case "3":
                     constructionCompany.showHousePlans();
                     break;
                 case "4":
+                    System.out.println("What plan you want to change?");
+
+                case "5":
                     System.out.println("What's clients name to be added?");
                     String answer = scanner.nextLine();
                     Observer addClient = new Client(answer);
                     constructionCompany.addObserver(addClient);
                     break;
-                case "5":
+                case "6":
                     System.out.println("What's clients name to be removed?");
                     Observer removeClient = new Client(scanner.nextLine());
                     constructionCompany.removeObserver(removeClient);
                     break;
-                case "6":
+                case "7":
                     constructionCompany.showObservers();
                     break;
+
                 case "9":
                     return;
             }

@@ -26,4 +26,8 @@ public class ApartmentHouse implements IHouse{
     public String toString(){
         return address + " | " + cost + "$ | " + built;
     }
+    @Override
+    public double getCost(){
+        return cost;
+    }
 }

@@ -2,18 +2,18 @@ package Decorator;
 
 import Factory.IHouse;
 
-public class FurnitureDecorator extends HouseDecorator {
-    public FurnitureDecorator(IHouse decoratedHouse) {
+public class WarrantyDecorator extends HouseDecorator{
+    public WarrantyDecorator(IHouse decoratedHouse) {
         super(decoratedHouse);
     }
 
     @Override
     public void description() {
         decoratedHouse.description();
-        System.out.println("Built-in furniture");
+        System.out.println("Long-term warranty(50 years)");
     }
     @Override
     public double getCost(){
-        return decoratedHouse.getCost() + 500;
+        return decoratedHouse.getCost() + 2000;
     }
 }
