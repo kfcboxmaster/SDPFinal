@@ -62,6 +62,14 @@ public class CostEstimationAdapter implements CostEstimator {
 
 ## Observer Pattern
 
+![Observer.jpg](images/Observer.jpg)
+
+### Structure
+- **ConstructionCompany - Publisher**
+- **Observer - Subscriber**
+- **Client - Concrete Subscriber**
+- **Main - Client**
+
 The Observer pattern is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they're observing.
 
 In this project, the Observer pattern is used to notify `Client` objects about updates in the `ConstructionCompany`.
@@ -90,6 +98,16 @@ public class Client implements Observer{
 
 ## Factory Pattern
 
+![Factory.jpg](images/Factory.jpg)
+
+### Structure
+- **IHouseFactory - Creator**
+- **ApartmentFactory - ConcreteCreatorA**
+- **CottageFactory - ConcreteCreatorB**
+- **IHouse - Product**
+- **ApartmentHouse - ConcreteProductA**
+- **CottageHouse - ConcreteProductB**
+
 The Factory Method pattern is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 
 In this project, the Factory pattern is used to create different types of `IHouse` objects.
@@ -108,6 +126,15 @@ public class ApartmentFactory implements IHouseFactory{
 ```
 
 ## Decorator Pattern
+
+![Decorator.jpg](images/Decorator.jpg)
+
+### Structure
+- **IHouse - Component**
+- **ApartmentHouse - ConcreteComponent**
+- **HouseDecorator - BaseDecorator**
+- **FurnitureDecorator, WarrantyDecorator - ConcreteDecorators**
+- **Main - Client**
 
 The Decorator pattern is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 
@@ -141,6 +168,14 @@ public class HouseDecorator implements IHouse{
 
 ## Strategy Pattern
 
+![Strategy.jpg](images/Strategy.jpg)
+
+### Structure
+- **ContextStrategy - Context**
+- **BuiltStrategy - Strategy**
+- **WoodenHouseStrategy, BrickHouseStrategy - ConcreteStrategies**
+- **Main - Client**
+
 The Strategy pattern is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
 
 In this project, the Strategy pattern is used to select the materials used to build a house.
@@ -158,6 +193,11 @@ public class WoodenHouseStrategy implements BuiltStrategy{
 }
 ```
 ## Singleton Pattern
+
+![Singleton.jpg](images/Singleton.jpg)
+
+### Structure
+- **ConstructionCompany - Singleton**
 
 The Singleton pattern is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
